@@ -79,6 +79,36 @@ This project is the backend for the Intelligent Image and PDF Analyzer. It provi
     }
     ```
 
+## 🤖 Artificial Intelligence Technologies Used
+
+### Hugging Face
+
+Hugging Face is a leading provider of natural language processing (NLP) models and tools. In this project, we use the Hugging Face API to analyze images and generate descriptions. The specific model used is `Salesforce/blip-image-captioning-base`, which is designed for image captioning.
+
+- **Purpose:** Generate descriptive text for images.
+- **API URL:** `https://api-inference.huggingface.co/models/Salesforce/blip-image-captioning-base`
+
+### DeepSeek
+
+DeepSeek is an advanced AI platform that provides various models for text processing, including translation and summarization. In this project, we use the DeepSeek API to translate text from English to Spanish and to generate summaries of PDF content.
+
+- **Purpose:** Translate text and generate summaries.
+- **API URL:** `https://api.deepseek.com/v1/chat/completions`
+
+### How It Works
+
+1. **Image Analysis:**
+   - The user uploads an image.
+   - The image is sent to the Hugging Face API, which generates a descriptive text in English.
+   - The descriptive text is then sent to the DeepSeek API for translation into Spanish.
+   - The translated text is returned to the user.
+
+2. **PDF Analysis:**
+   - The user uploads a PDF file.
+   - The PDF content is extracted and sent to the DeepSeek API to generate a summary.
+   - The summary is then translated into Spanish using the DeepSeek API.
+   - The translated summary is returned to the user.
+
 ## 📂 Project Structure
 
 - `server.js`: Main server file that configures the endpoints and handles requests.
