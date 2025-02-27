@@ -1,112 +1,112 @@
-# 📸📝 Backend del Analizador Inteligente de Imágenes y PDFs
+# 📸📝 Backend for the Intelligent Image and PDF Analyzer
 
-Este proyecto es el backend del Analizador Inteligente de Imágenes y PDFs. Proporciona endpoints para subir y analizar imágenes y archivos PDF utilizando APIs de terceros para generar descripciones y resúmenes.
+This project is the backend for the Intelligent Image and PDF Analyzer. It provides endpoints to upload and analyze images and PDF files using third-party APIs to generate descriptions and summaries.
 
-## 🚀 Requisitos
+## 🚀 Requirements
 
-- Node.js (versión 14 o superior)
-- npm (versión 6 o superior)
+- Node.js (version 14 or higher)
+- npm (version 6 or higher)
 
-## 📥 Instalación
+## 📥 Installation
 
-1. Clona el repositorio en tu máquina local:
+1. Clone the repository to your local machine:
     ```sh
-    git clone https://github.com/tu-usuario/tu-repositorio.git
+    git clone https://github.com/your-username/your-repository.git
     ```
 
-2. Navega al directorio del backend:
+2. Navigate to the backend directory:
     ```sh
     cd /c:/Users/juancamilo/Desktop/ReconocimientoDeepSeek/backend
     ```
 
-3. Instala las dependencias necesarias:
+3. Install the necessary dependencies:
     ```sh
     npm install
     ```
 
-## ⚙️ Configuración
+## ⚙️ Configuration
 
-1. Crea un archivo `.env` en el directorio del backend y agrega las siguientes variables de entorno:
+1. Create a `.env` file in the backend directory and add the following environment variables:
     ```env
-    API_KEY_HUGGINGFACE=tu_api_key_de_huggingface
-    API_KEY_DEEPSEEK=tu_api_key_de_deepseek
+    API_KEY_HUGGINGFACE=your_huggingface_api_key
+    API_KEY_DEEPSEEK=your_deepseek_api_key
     DEEPSEEK_API_URL=https://api.deepseek.com/v1/chat/completions
     HUGGING_FACE_API_URL=https://api-inference.huggingface.co/models/Salesforce/blip-image-captioning-base
     ```
 
-2. Asegúrate de reemplazar `tu_api_key_de_huggingface` y `tu_api_key_de_deepseek` con tus claves de API reales.
+2. Make sure to replace `your_huggingface_api_key` and `your_deepseek_api_key` with your actual API keys.
 
-## 🛠️ Uso
+## 🛠️ Usage
 
-1. Inicia el servidor:
+1. Start the server:
     ```sh
     node server.js
     ```
 
-2. El servidor estará corriendo en `http://localhost:3000`.
+2. The server will be running at `http://localhost:3000`.
 
 ## 📡 Endpoints
 
-### Subir y analizar imágenes
+### Upload and Analyze Images
 
 - **URL:** `/upload`
-- **Método:** `POST`
-- **Descripción:** Sube y analiza una imagen.
-- **Parámetros:**
-    - `archivo` (form-data): El archivo de imagen a subir.
-- **Respuesta:**
+- **Method:** `POST`
+- **Description:** Upload and analyze an image.
+- **Parameters:**
+    - `archivo` (form-data): The image file to upload.
+- **Response:**
     ```json
     {
-        "mensaje": "Archivo subido correctamente",
+        "mensaje": "File uploaded successfully",
         "analisis": {
-            "traducido": "Descripción en español"
+            "traducido": "Description in Spanish"
         }
     }
     ```
 
-### Subir y analizar PDFs
+### Upload and Analyze PDFs
 
 - **URL:** `/upload-pdf`
-- **Método:** `POST`
-- **Descripción:** Sube y analiza un archivo PDF.
-- **Parámetros:**
-    - `archivo` (form-data): El archivo PDF a subir.
-- **Respuesta:**
+- **Method:** `POST`
+- **Description:** Upload and analyze a PDF file.
+- **Parameters:**
+    - `archivo` (form-data): The PDF file to upload.
+- **Response:**
     ```json
     {
-        "mensaje": "Archivo subido correctamente",
-        "analisis": "Resumen del contenido del PDF en español"
+        "mensaje": "File uploaded successfully",
+        "analisis": "Summary of the PDF content in Spanish"
     }
     ```
 
-## 📂 Estructura del Proyecto
+## 📂 Project Structure
 
-- `server.js`: Archivo principal del servidor que configura los endpoints y maneja las solicitudes.
-- `analyze.js`: Módulo para analizar imágenes utilizando la API de Hugging Face y traducir el texto utilizando la API de DeepSeek.
-- `analyzePdf.js`: Módulo para analizar archivos PDF, generar resúmenes y traducir el contenido utilizando la API de DeepSeek.
+- `server.js`: Main server file that configures the endpoints and handles requests.
+- `analyze.js`: Module to analyze images using the Hugging Face API and translate the text using the DeepSeek API.
+- `analyzePdf.js`: Module to analyze PDF files, generate summaries, and translate the content using the DeepSeek API.
 
-## 📦 Dependencias
+## 📦 Dependencies
 
-- `express`: Framework web para Node.js.
-- `multer`: Middleware para manejar la subida de archivos.
-- `cors`: Middleware para habilitar CORS.
-- `pdf-parse`: Biblioteca para extraer texto de archivos PDF.
-- `node-fetch`: Biblioteca para realizar solicitudes HTTP.
+- `express`: Web framework for Node.js.
+- `multer`: Middleware for handling file uploads.
+- `cors`: Middleware to enable CORS.
+- `pdf-parse`: Library to extract text from PDF files.
+- `node-fetch`: Library to make HTTP requests.
 
-## 🤝 Contribuir
+## 🤝 Contributing
 
-Si deseas contribuir a este proyecto, por favor sigue los siguientes pasos:
+If you want to contribute to this project, please follow these steps:
 
-1. Haz un fork del repositorio.
-2. Crea una nueva rama (`git checkout -b feature/nueva-funcionalidad`).
-3. Realiza tus cambios y haz commit (`git commit -m 'Agregar nueva funcionalidad'`).
-4. Sube tus cambios (`git push origin feature/nueva-funcionalidad`).
-5. Abre un Pull Request.
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/new-feature`).
+3. Make your changes and commit them (`git commit -m 'Add new feature'`).
+4. Push your changes (`git push origin feature/new-feature`).
+5. Open a Pull Request.
 
-## 📜 Licencia
+## 📜 License
 
-Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
-## 📧 Contacto
+## 📧 Contact
 
-Si tienes alguna pregunta o sugerencia, no dudes en contactarnos a través de [juancamilobuitragohernandez13@gmail.com](mailto:juancamilobuitragohernandez13@gmail.com).
+If you have any questions or suggestions, feel free to contact us at [juancamilobuitragohernandez13@gmail.com](mailto:juancamilobuitragohernandez13@gmail.com).
