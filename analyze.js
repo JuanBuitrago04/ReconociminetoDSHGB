@@ -1,9 +1,13 @@
 const fetch = require('node-fetch');
+const dotenv = require('dotenv');
 
-const HUGGING_FACE_API_URL = "https://api-inference.huggingface.co/models/Salesforce/blip-image-captioning-base";
-const DEEPSEEK_API_URL = "https://api.deepseek.com/v1/chat/completions";
-const API_KEY_HUGGINGFACE = "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";
-const API_KEY_DEEPSEEK = "sk-5dff92c381d8431bba1416eedc151283";
+// Cargar variables de entorno desde el archivo .env
+dotenv.config();
+
+const HUGGING_FACE_API_URL = process.env.HUGGING_FACE_API_URL;
+const DEEPSEEK_API_URL = process.env.DEEPSEEK_API_URL;
+const API_KEY_HUGGINGFACE = process.env.API_KEY_HUGGINGFACE;
+const API_KEY_DEEPSEEK = process.env.API_KEY_DEEPSEEK;
 
 // Función para analizar imagen con Hugging Face
 async function analyzeImage(imageBuffer) {
@@ -29,7 +33,7 @@ async function analyzeImage(imageBuffer) {
         // Llamamos a DeepSeek para traducir el texto al español
         const translatedText = await translateText(text);
 
-        return {traducido: translatedText };
+        return { traducido: translatedText };
     } catch (error) {
         console.error("Error al analizar la imagen:", error);
         return { error: "No se pudo analizar la imagen" };

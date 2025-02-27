@@ -1,8 +1,12 @@
 const pdfParse = require('pdf-parse');
 const fetch = require('node-fetch');
+const dotenv = require('dotenv');
 
-const DEEPSEEK_API_URL = "https://api.deepseek.com/v1/chat/completions";
-const API_KEY_DEEPSEEK = "sk-5dff92c381d8431bba1416eedc151283";
+// Cargar variables de entorno desde el archivo .env
+dotenv.config();
+
+const DEEPSEEK_API_URL = process.env.DEEPSEEK_API_URL;
+const API_KEY_DEEPSEEK = process.env.API_KEY_DEEPSEEK;
 
 async function analyzePdf(pdfBuffer) {
     try {
@@ -15,7 +19,7 @@ async function analyzePdf(pdfBuffer) {
         // Traducimos la explicación al español
         const translatedExplanation = await translateText(explanation);
 
-        return translatedExplanation;
+        return { traducido: translatedExplanation };
     } catch (error) {
         console.error("Error al analizar el PDF:", error);
         return { error: "No se pudo analizar el PDF" };

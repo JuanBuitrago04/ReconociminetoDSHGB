@@ -1,8 +1,12 @@
 const express = require('express');
 const multer = require('multer');
 const cors = require('cors');
+const dotenv = require('dotenv');
 const analyzeImage = require('./analyze.js');
-const analyzePdf = require('./analyzePdf.js'); // Importar analyzePdf.js
+const analyzePdf = require('./analyzePdf.js');
+
+// Cargar variables de entorno desde el archivo .env
+dotenv.config();
 
 const app = express();
 app.use(express.json());
