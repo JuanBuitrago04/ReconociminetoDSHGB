@@ -1,13 +1,13 @@
-# Backend del Analizador Inteligente de Imágenes y PDFs
+# 📸📝 Backend del Analizador Inteligente de Imágenes y PDFs
 
 Este proyecto es el backend del Analizador Inteligente de Imágenes y PDFs. Proporciona endpoints para subir y analizar imágenes y archivos PDF utilizando APIs de terceros para generar descripciones y resúmenes.
 
-## Requisitos
+## 🚀 Requisitos
 
 - Node.js (versión 14 o superior)
 - npm (versión 6 o superior)
 
-## Instalación
+## 📥 Instalación
 
 1. Clona el repositorio en tu máquina local:
     ```sh
@@ -24,17 +24,19 @@ Este proyecto es el backend del Analizador Inteligente de Imágenes y PDFs. Prop
     npm install
     ```
 
-## Configuración
+## ⚙️ Configuración
 
 1. Crea un archivo `.env` en el directorio del backend y agrega las siguientes variables de entorno:
     ```env
     API_KEY_HUGGINGFACE=tu_api_key_de_huggingface
     API_KEY_DEEPSEEK=tu_api_key_de_deepseek
+    DEEPSEEK_API_URL=https://api.deepseek.com/v1/chat/completions
+    HUGGING_FACE_API_URL=https://api-inference.huggingface.co/models/Salesforce/blip-image-captioning-base
     ```
 
 2. Asegúrate de reemplazar `tu_api_key_de_huggingface` y `tu_api_key_de_deepseek` con tus claves de API reales.
 
-## Uso
+## 🛠️ Uso
 
 1. Inicia el servidor:
     ```sh
@@ -43,7 +45,7 @@ Este proyecto es el backend del Analizador Inteligente de Imágenes y PDFs. Prop
 
 2. El servidor estará corriendo en `http://localhost:3000`.
 
-## Endpoints
+## 📡 Endpoints
 
 ### Subir y analizar imágenes
 
@@ -77,13 +79,13 @@ Este proyecto es el backend del Analizador Inteligente de Imágenes y PDFs. Prop
     }
     ```
 
-## Estructura del Proyecto
+## 📂 Estructura del Proyecto
 
 - `server.js`: Archivo principal del servidor que configura los endpoints y maneja las solicitudes.
 - `analyze.js`: Módulo para analizar imágenes utilizando la API de Hugging Face y traducir el texto utilizando la API de DeepSeek.
 - `analyzePdf.js`: Módulo para analizar archivos PDF, generar resúmenes y traducir el contenido utilizando la API de DeepSeek.
 
-## Dependencias
+## 📦 Dependencias
 
 - `express`: Framework web para Node.js.
 - `multer`: Middleware para manejar la subida de archivos.
@@ -91,7 +93,7 @@ Este proyecto es el backend del Analizador Inteligente de Imágenes y PDFs. Prop
 - `pdf-parse`: Biblioteca para extraer texto de archivos PDF.
 - `node-fetch`: Biblioteca para realizar solicitudes HTTP.
 
-## Contribuir
+## 🤝 Contribuir
 
 Si deseas contribuir a este proyecto, por favor sigue los siguientes pasos:
 
@@ -101,10 +103,10 @@ Si deseas contribuir a este proyecto, por favor sigue los siguientes pasos:
 4. Sube tus cambios (`git push origin feature/nueva-funcionalidad`).
 5. Abre un Pull Request.
 
-## Licencia
+## 📜 Licencia
 
 Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
 
-## Contacto
+## 📧 Contacto
 
-Si tienes alguna pregunta o sugerencia, no dudes en contactarnos a través de [juancamilobuitragohernandez13@gmail.com](mailto:tu-email@dominio.com).
+Si tienes alguna pregunta o sugerencia, no dudes en contactarnos a través de [juancamilobuitragohernandez13@gmail.com](mailto:juancamilobuitragohernandez13@gmail.com).
